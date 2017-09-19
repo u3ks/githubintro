@@ -63,8 +63,12 @@ print(distance)
 print(max(agents, key=operator.itemgetter(1)))
 
 
-matplotlib.pyplot.xlim(0, 99)
-matplotlib.pyplot.ylim(0, 99)
-matplotlib.pyplot.scatter(agents[0][0],agents[0][1])
-matplotlib.pyplot.scatter(agents[1][0],agents[1][1], color='red')
+matplotlib.pyplot.xlim(0, 100)
+matplotlib.pyplot.ylim(0, 100)
+northern_most_point = max(agents, key=operator.itemgetter(1))
+other_point = min(agents, key=operator.itemgetter(1))
+#plot the northern_most_point red
+matplotlib.pyplot.scatter(northern_most_point[0],northern_most_point[1], color='red')
+#plot the other point blue
+matplotlib.pyplot.scatter(other_point[0],other_point[1], color='blue')
 matplotlib.pyplot.show()
